@@ -1,5 +1,5 @@
 import React from 'react';
-import { IoPlayOutline } from "react-icons/io5";
+import playImage from "../assets/products/Play.png"
 import bannerImage from "../assets/products/banner.png"
 
 const Banner = () => {
@@ -26,8 +26,9 @@ const Banner = () => {
                         </button>
                         <button className='border border-2 border-purple-500 rounded-full p-1.5 hover:bg-purple-500 hover:text-white cursor-pointer'>
                             <div className='flex justify-center items-center gap-2'>
+                            <img src={playImage} alt="" />
 
-                            <IoPlayOutline />
+                            
                             Watch demo
                             </div>
                         </button>
