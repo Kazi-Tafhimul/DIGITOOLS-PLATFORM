@@ -8,39 +8,29 @@ const CardSection = ({cardData}) => {
             {cards.map((card)=>(
                 <div key={card.id} className="card w-full bg-base-100 shadow-sm border border-gray-200">
   <div className="card-body">
-    <span className="badge badge-xs badge-warning">{card.badge}</span>
-    <div className="flex justify-between">
+    <div className='flex justify-end'>
+        <span className="badge badge-xs badge-warning flex justify-end">{card.badge}</span>
+    </div>
+    <div>
+        <img src={card.icon}/>
+    </div>
+    <div className="flex flex-col">
       <h2 className="text-3xl font-bold">{card.title}</h2>
-      <span className="text-xl">$29/mo</span>
+      <p className='text-lg font-normal text-gray-500 mt-10 mb-10'>{card.description}</p>
+      <div className="text-xl"><span className='font-bold'>${card.price}</span>{card.priceType}</div>
     </div>
     <ul className="mt-6 flex flex-col gap-2 text-xs">
-      <li>
+        
+     {card.features.map((feature,index) => (
+         <li key = {index} className='flex items-center'>
         <svg xmlns="http://www.w3.org/2000/svg" className="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-        <span>High-resolution image generation</span>
+        <span>{feature}</span>
       </li>
-      <li>
-        <svg xmlns="http://www.w3.org/2000/svg" className="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-        <span>Customizable style templates</span>
-      </li>
-      <li>
-        <svg xmlns="http://www.w3.org/2000/svg" className="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-        <span>Batch processing capabilities</span>
-      </li>
-      <li>
-        <svg xmlns="http://www.w3.org/2000/svg" className="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-        <span>AI-driven image enhancements</span>
-      </li>
-      <li className="opacity-50">
-        <svg xmlns="http://www.w3.org/2000/svg" className="size-4 me-2 inline-block text-base-content/50" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-        <span className="line-through">Seamless cloud integration</span>
-      </li>
-      <li className="opacity-50">
-        <svg xmlns="http://www.w3.org/2000/svg" className="size-4 me-2 inline-block text-base-content/50" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-        <span className="line-through">Real-time collaboration tools</span>
-      </li>
+     ))}
+       
     </ul>
     <div className="mt-6">
-      <button className="btn btn-primary btn-block">Subscribe</button>
+      <button className="btn btn-primary btn-block rounded-full">Buy Now</button>
     </div>
   </div>
 </div>
